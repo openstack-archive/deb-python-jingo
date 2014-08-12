@@ -1,0 +1,9 @@
+Document: jingo-doc
+Title: jingo Documentation
+Author: N/A
+Abstract: Sphinx documentation for jingo
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-jingo-doc/html/index.html
+Files: /usr/share/doc/python-jingo-doc/html/*
