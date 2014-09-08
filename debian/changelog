@@ -1,5 +1,5 @@
 python-jingo (0.7-1) unstable; urgency=medium
 
-  * Initial release. (Closes: #XXXXXX)
+  * Initial release. (Closes: #760862)
 
  -- Thomas Goirand <zigo@debian.org>  Tue, 12 Aug 2014 22:39:45 +0800
