@@ -1,3 +1,9 @@
+python-jingo (0.7-2) unstable; urgency=medium
+
+  * Added fix-run_tests.py-with-django-1.7.patch (Closes: #765160).
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 17 Oct 2014 08:08:54 +0000
+
 python-jingo (0.7-1) unstable; urgency=medium
 
   * Initial release. (Closes: #760862)
