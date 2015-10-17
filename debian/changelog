@@ -1,6 +1,10 @@
 python-jingo (0.7.1-1) unstable; urgency=medium
 
   * New upstream release.
+  * Removed defines-own-StrAndUnicode.patch applied upstream.
+  * Added django_1.8_compatability_fixes.patch from upstream, to fix a Django
+    1.8 compat (Closes: #801934).
+  * Refreshed the other 2 patches.
 
  -- Thomas Goirand <zigo@debian.org>  Sat, 17 Oct 2015 11:46:10 +0200
 

@@ -3,9 +3,11 @@ Author: Thomas Goirand <zigo@debian.org>
 Forwarded: no
 Last-Update: 2014-08-12
 
---- python-jingo-0.7.orig/jingo/helpers.py
-+++ python-jingo-0.7/jingo/helpers.py
-@@ -58,18 +58,6 @@ def nl2br(string):
+Index: python-jingo/jingo/helpers.py
+===================================================================
+--- python-jingo.orig/jingo/helpers.py
++++ python-jingo/jingo/helpers.py
+@@ -69,18 +69,6 @@ def nl2br(string):
  
  
  @register.filter
@@ -24,9 +26,11 @@ Last-Update: 2014-08-12
  def ifeq(a, b, text):
      """Return ``text`` if ``a == b``."""
      return jinja2.Markup(text if a == b else '')
---- python-jingo-0.7.orig/jingo/tests/test_helpers.py
-+++ python-jingo-0.7/jingo/tests/test_helpers.py
-@@ -61,23 +61,6 @@ def test_nl2br():
+Index: python-jingo/jingo/tests/test_helpers.py
+===================================================================
+--- python-jingo.orig/jingo/tests/test_helpers.py
++++ python-jingo/jingo/tests/test_helpers.py
+@@ -109,23 +109,6 @@ def test_nl2br():
      eq_(s, '')
  
  

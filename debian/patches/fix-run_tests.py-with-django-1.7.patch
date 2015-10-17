@@ -6,9 +6,11 @@ Bug-Debian: https://bugs.debian.org/765160
 Forwarded: no
 Last-Update: 2014-10-17
 
---- python-jingo-0.7.orig/run_tests.py
-+++ python-jingo-0.7/run_tests.py
-@@ -9,5 +9,9 @@ os.environ['DJANGO_SETTINGS_MODULE'] = '
+Index: python-jingo/run_tests.py
+===================================================================
+--- python-jingo.orig/run_tests.py
++++ python-jingo/run_tests.py
+@@ -10,6 +10,10 @@ os.environ['DJANGO_SETTINGS_MODULE'] = '
  os.environ['PYTHONPATH'] = os.pathsep.join([ROOT,
                                              os.path.join(ROOT, 'examples')])
  
@@ -17,4 +19,5 @@ Last-Update: 2014-10-17
 +    django.setup()
 +
  if __name__ == '__main__':
-     nose.main()
+     if hasattr(django, 'setup'):
+         # Django's app registry was added in 1.7. We need to call `setup` to
