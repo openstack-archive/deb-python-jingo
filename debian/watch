@@ -1,3 +1,2 @@
 version=3
-http://pypi.python.org/packages/source/j/jingo jingo-(.*).tar.gz
-
+https://github.com/jbalogh/jingo/tags .*/(\d[\d\.]+)\.tar\.gz
