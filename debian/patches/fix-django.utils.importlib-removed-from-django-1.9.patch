@@ -1,0 +1,16 @@
+Description: Fix django.utils.importlib removed from Django 1.9
+Author: Thomas Goirand <zigo@debian.org>
+Forwarded: no
+Last-Update: 2015-12-28
+
+--- python-jingo-0.8.orig/jingo/__init__.py
++++ python-jingo-0.8/jingo/__init__.py
+@@ -10,7 +10,7 @@ from django.apps import apps
+ from django.conf import settings
+ from django.template.base import Origin
+ from django.template.loader import BaseLoader
+-from django.utils.importlib import import_module
++from importlib import import_module
+ 
+ try:
+     import importlib.util
