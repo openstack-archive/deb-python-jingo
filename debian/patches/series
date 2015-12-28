@@ -1,3 +1,2 @@
 removed-problematic-functions-with-python3.patch
 fix-run_tests.py-with-django-1.7.patch
-django_1.8_compatability_fixes.patch
