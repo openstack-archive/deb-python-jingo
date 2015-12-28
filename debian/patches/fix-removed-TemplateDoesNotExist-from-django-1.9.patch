@@ -1,0 +1,25 @@
+Description: Fix removed TemplateDoesNotExist from Django 1.9
+Author: Thomas Goirand <zigo@debian.org>
+Forwarded: no
+Last-Update: 2015-12-28
+
+--- python-jingo-0.8.orig/jingo/__init__.py
++++ python-jingo-0.8/jingo/__init__.py
+@@ -8,7 +8,7 @@ import re
+ 
+ from django.apps import apps
+ from django.conf import settings
+-from django.template.base import Origin, TemplateDoesNotExist
++from django.template.base import Origin
+ from django.template.loader import BaseLoader
+ from django.utils.importlib import import_module
+ 
+@@ -67,6 +67,8 @@ log = logging.getLogger('jingo')
+ 
+ _helpers_loaded = False
+ 
++class TemplateDoesNotExist(Exception):
++    pass
+ 
+ class Template(jinja2.Template):
+ 
