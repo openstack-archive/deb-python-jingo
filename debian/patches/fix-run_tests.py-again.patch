@@ -29,25 +29,15 @@ Forwarded: <no|not-needed|url proving that it has been forwarded>
 Reviewed-By: <name and email of someone who approved the patch>
 Last-Update: <YYYY-MM-DD>
 
-Index: python-jingo/run_tests.py
-===================================================================
---- python-jingo.orig/run_tests.py
-+++ python-jingo/run_tests.py
-@@ -3,6 +3,8 @@ import os
- import nose
- import django
- 
-+from django.contrib.contenttypes.models import ContentType
-+
- NAME = os.path.basename(os.path.dirname(__file__))
- ROOT = os.path.abspath(os.path.dirname(__file__))
- 
-@@ -10,6 +12,8 @@ os.environ['DJANGO_SETTINGS_MODULE'] = '
- os.environ['PYTHONPATH'] = os.pathsep.join([ROOT,
-                                             os.path.join(ROOT, 'examples')])
- 
-+ct, create = ContentType.objects.get_or_create(app_label='jingo')
-+
- import django
+--- python-jingo-0.8.orig/run_tests.py
++++ python-jingo-0.8/run_tests.py
+@@ -14,6 +14,9 @@ import django
  if hasattr(django, 'setup'):
      django.setup()
+ 
++from django.contrib.contenttypes.models import ContentType
++ct, create = ContentType.objects.get_or_create(app_label='jingo')
++
+ if __name__ == '__main__':
+     if hasattr(django, 'setup'):
+         # Django's app registry was added in 1.7. We need to call `setup` to
