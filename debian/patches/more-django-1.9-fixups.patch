@@ -1,0 +1,52 @@
+Description: More Django 1.9 fixups
+Author: Thomas Goirand <zigo@debian.org>
+Bug-Debian: https://bugs.debian.org/806365
+Forwarded: no
+Last-Update: 2016-01-10
+
+--- python-jingo-0.8.orig/fake_settings.py
++++ python-jingo-0.8/fake_settings.py
+@@ -5,6 +5,9 @@ path = lambda *a: os.path.join(ROOT, *a)
+ ROOT = os.path.dirname(os.path.abspath(__file__))
+ INSTALLED_APPS = (
+     'django.contrib.admin.apps.SimpleAdminConfig',
++    'django.contrib.sites',
++    'django.contrib.contenttypes',
++    'django.contrib.auth',
+     'jingo.tests.jinja_app',
+     'jingo.tests.django_app',
+ )
+@@ -18,3 +21,13 @@ JINGO_EXCLUDE_APPS = ('django_app',)
+ ROOT_URLCONF = 'jingo.tests.urls'
+ 
+ SECRET_KEY = 'jingo'
++
++APP_LABEL = 'jingo'
++app_label = 'jingo'
++
++DATABASES = {
++    'default': {
++        'ENGINE': 'django.db.backends.sqlite3',
++        'NAME': 'mydatabase',
++    }
++}
+--- python-jingo-0.8.orig/jingo/monkey.py
++++ python-jingo-0.8/jingo/monkey.py
+@@ -82,7 +82,7 @@ def patch():
+     django.utils.safestring.SafeData.__html__ = __html__
+ 
+     # forms imports have to come after we patch conditional_escape.
+-    from django.forms import forms, formsets, util, widgets
++    from django.forms import forms, formsets, widgets
+ 
+     # Replace StrAndUnicode with SafeStrAndUnicode in the inheritance
+     # for all these classes.
+@@ -90,8 +90,6 @@ def patch():
+         forms.BaseForm,
+         forms.BoundField,
+         formsets.BaseFormSet,
+-        util.ErrorDict,
+-        util.ErrorList,
+         widgets.Media,
+         widgets.RadioFieldRenderer,
+     ]
