@@ -7,6 +7,7 @@ python-jingo (0.8-1) unstable; urgency=medium
   * Added fix-django.utils.importlib-removed-from-django-1.9.patch.
   * Added add-django.contrib.sites-to-installed-apps.patch.
   * Added more-django-1.9-fixups.patch.
+  * Added remove-broken-django-tests.patch.
 
  -- Thomas Goirand <zigo@debian.org>  Mon, 28 Dec 2015 10:04:05 +0000
 
