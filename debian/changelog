@@ -10,6 +10,7 @@ python-jingo (0.8-1) unstable; urgency=medium
   * Fix run_tests.py for Django 1.9.
   * Moved some build-depends in build-depends-indep, added sqlite3 as
     build-depends-indep.
+  * Added use-six-not-from-django.patch.
 
  -- Thomas Goirand <zigo@debian.org>  Mon, 28 Dec 2015 10:04:05 +0000
 

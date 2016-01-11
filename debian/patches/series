@@ -4,3 +4,4 @@ fix-django.utils.importlib-removed-from-django-1.9.patch
 more-django-1.9-fixups.patch
 remove-broken-django-tests.patch
 fix-run_tests.py.patch
+use-six-not-from-django.patch

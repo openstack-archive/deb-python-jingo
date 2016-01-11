@@ -30,6 +30,7 @@ Package: python-jingo
 Architecture: all
 Depends: python-django,
          python-jinja2,
+         python-six,
          ${misc:Depends},
          ${python:Depends},
 Description: adapter for using Jinja2 templates with Django - Python 2.x
@@ -43,6 +44,7 @@ Package: python3-jingo
 Architecture: all
 Depends: python3-django,
          python3-jinja2,
+         python3-six,
          ${misc:Depends},
          ${python3:Depends},
 Description: adapter for using Jinja2 templates with Django - Python 3.x

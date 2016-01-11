@@ -1,0 +1,49 @@
+Description: Use six not from django
+Author: Thomas Goirand <zigo@debian.org>
+Forwarded: no
+Last-Update: 2016-01-11
+
+--- python-jingo-0.8.orig/jingo/helpers.py
++++ python-jingo-0.8/jingo/helpers.py
+@@ -10,7 +10,7 @@ except ImportError:
+ from django.core.urlresolvers import reverse
+ from django.http import QueryDict
+ from django.template.defaulttags import CsrfTokenNode
+-from django.utils import six
++import six
+ from django.utils.encoding import smart_str
+ try:
+     from django.utils.encoding import smart_unicode as smart_text
+--- python-jingo-0.8.orig/jingo/monkey.py
++++ python-jingo-0.8/jingo/monkey.py
+@@ -27,7 +27,7 @@ from __future__ import unicode_literals
+ import django.utils.encoding
+ import django.utils.html
+ import django.utils.safestring
+-from django.utils import six
++import six
+ 
+ try:
+     # This was removed in Django 1.5+. We add it back to support Django 1.4.
+--- python-jingo-0.8.orig/jingo/tests/test_helpers.py
++++ python-jingo-0.8/jingo/tests/test_helpers.py
+@@ -8,7 +8,7 @@ from datetime import datetime
+ from collections import namedtuple
+ 
+ from django.http import QueryDict
+-from django.utils import six
++import six
+ from jinja2 import Markup
+ try:
+     from unittest.mock import patch
+--- python-jingo-0.8.orig/jingo/tests/test_monkey.py
++++ python-jingo-0.8/jingo/tests/test_monkey.py
+@@ -1,7 +1,7 @@
+ from __future__ import unicode_literals
+ 
+ from django import forms
+-from django.utils import six
++import six
+ 
+ from jinja2 import escape
+ from nose.tools import eq_
