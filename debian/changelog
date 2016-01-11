@@ -8,6 +8,8 @@ python-jingo (0.8-1) unstable; urgency=medium
   * Added add-django.contrib.sites-to-installed-apps.patch.
   * Added remove-broken-django-tests.patch.
   * Fix run_tests.py for Django 1.9.
+  * Moved some build-depends in build-depends-indep, added sqlite3 as
+    build-depends-indep.
 
  -- Thomas Goirand <zigo@debian.org>  Mon, 28 Dec 2015 10:04:05 +0000
 

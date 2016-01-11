@@ -2,24 +2,25 @@ Source: python-jingo
 Section: python
 Priority: optional
 Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
-Uploaders: Thomas Goirand <zigo@debian.org>
+Uploaders: Thomas Goirand <zigo@debian.org>,
 Build-Depends: debhelper (>= 9),
-               python-all (>= 2.6.6-3~),
-               python-django,
-               python-jinja2,
-               python-mock,
-               python-nose,
+               dh-python,
+               python-all,
                python-setuptools,
-               python-six,
                python-sphinx,
                python3-all,
-               python3-django,
-               python3-jinja2,
-               python3-mock,
-               python3-nose,
                python3-setuptools,
-               python3-six
-Build-Depends-Indep: sqlite3
+Build-Depends-Indep: python-django,
+                     python-jinja2,
+                     python-mock,
+                     python-nose,
+                     python-six,
+                     python3-django,
+                     python3-jinja2,
+                     python3-mock,
+                     python3-nose,
+                     python3-six,
+                     sqlite3,
 Standards-Version: 3.9.6
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-jingo.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-jingo.git
@@ -27,8 +28,10 @@ Homepage: http://github.com/jbalogh/jingo
 
 Package: python-jingo
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: python-django, python-jinja2, ${misc:Depends}, ${python:Depends}
+Depends: python-django,
+         python-jinja2,
+         ${misc:Depends},
+         ${python:Depends},
 Description: adapter for using Jinja2 templates with Django - Python 2.x
  Jingo is an adapter for using Jinja2 templates within Django. When configured
  properly you can render Jinja2 templates in your view the same way you'd
@@ -38,8 +41,10 @@ Description: adapter for using Jinja2 templates with Django - Python 2.x
 
 Package: python3-jingo
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: python3-django, python3-jinja2, ${misc:Depends}, ${python3:Depends}
+Depends: python3-django,
+         python3-jinja2,
+         ${misc:Depends},
+         ${python3:Depends},
 Description: adapter for using Jinja2 templates with Django - Python 3.x
  Jingo is an adapter for using Jinja2 templates within Django. When configured
  properly you can render Jinja2 templates in your view the same way you'd
@@ -50,8 +55,8 @@ Description: adapter for using Jinja2 templates with Django - Python 3.x
 Package: python-jingo-doc
 Section: doc
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6~)
-Depends: ${misc:Depends}, ${sphinxdoc:Depends}
+Depends: ${misc:Depends},
+         ${sphinxdoc:Depends},
 Description: adapter for using Jinja2 templates with Django - doc
  Jingo is an adapter for using Jinja2 templates within Django. When configured
  properly you can render Jinja2 templates in your view the same way you'd
