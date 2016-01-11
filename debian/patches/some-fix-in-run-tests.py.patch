@@ -1,0 +1,23 @@
+Description: Some fixes in run_tests.py
+Author: Thomas Goirand <zigo@debian.org>
+Bug-Debian: https://bugs.debian.org/806365
+Forwarded: no
+Last-Update: 2016-01-11
+
+--- python-jingo-0.8.orig/run_tests.py
++++ python-jingo-0.8/run_tests.py
+@@ -15,11 +15,11 @@ if hasattr(django, 'setup'):
+     django.setup()
+ 
+ from django.contrib.contenttypes.models import ContentType
+-ct, create = ContentType.objects.get_or_create(app_label='jingo')
++#ct, create = ContentType.objects.get_or_create(app_label='jingo')
+ 
+ if __name__ == '__main__':
+-    if hasattr(django, 'setup'):
++#    if hasattr(django, 'setup'):
+         # Django's app registry was added in 1.7. We need to call `setup` to
+         # initiate it.
+-        django.setup()
++ #       django.setup()
+     nose.main()

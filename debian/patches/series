@@ -4,5 +4,5 @@ fix-removed-TemplateDoesNotExist-from-django-1.9.patch
 fix-django.utils.importlib-removed-from-django-1.9.patch
 fix-run_tests.py-again.patch
 more-django-1.9-fixups.patch
-somre-fix-in-run-tests.py.patch
+some-fix-in-run-tests.py.patch
 remove-broken-django-tests.patch
