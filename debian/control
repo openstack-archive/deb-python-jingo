@@ -22,8 +22,8 @@ Build-Depends-Indep: python-django,
                      python3-six,
                      sqlite3,
 Standards-Version: 3.9.6
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-jingo.git
-Vcs-Git: git://anonscm.debian.org/openstack/python-jingo.git
+Vcs-Browser: https://anonscm.debian.org/cgit/openstack/python-jingo.git/
+Vcs-Git: https://anonscm.debian.org/git/openstack/python-jingo.git
 Homepage: https://github.com/jbalogh/jingo
 
 Package: python-jingo
