@@ -1,3 +1,9 @@
+python-jingo (0.8-2) UNRELEASED; urgency=medium
+
+  * Fixed homepage (https).
+
+ -- Ondřej Nový <novy@ondrej.org>  Sun, 28 Feb 2016 15:39:52 +0100
+
 python-jingo (0.8-1) unstable; urgency=medium
 
   * New upstream release.
