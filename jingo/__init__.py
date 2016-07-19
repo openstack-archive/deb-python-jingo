@@ -10,31 +10,36 @@ from django.apps import apps
 from django.conf import settings
 from django.template.base import Origin, TemplateDoesNotExist
 from django.template.loader import BaseLoader
-from django.utils.importlib import import_module
+
+try:
+    from importlib import import_module
+except ImportError:
+    from django.utils.importlib import import_module
 
 try:
     import importlib.util
     if hasattr(importlib.util, 'find_spec'):  # Py3>=3.4
-        def has_helpers(path):
-            return importlib.util.find_spec('helpers', path) is not None
+        def has_helpers(config):
+            module = '%s.helpers' % (config.name,)
+            return importlib.util.find_spec(module) is not None
     else:  # Py3<3.4
-        def has_helpers(path):
+        def has_helpers(config):
             # For Python 3.3, just try to import the module. Unfortunately,
             # this changes the contract slightly for Python 3.3: if there is an
             # module but this raises a legitimate ImportError, jingo will act
             # as if the module doesn't exist. The intent is that we raise
             # legitimate ImportErrors but ignore missing modules.
             try:
-                import_module('helpers', path)
+                import_module('%s.helpers' % config.name)
                 return True
             except ImportError:
                 return False
 except ImportError:
     import imp
 
-    def has_helpers(path):
+    def has_helpers(config):
         try:
-            imp.find_module('helpers', path)
+            imp.find_module('helpers', [config.path])
             return True
         except ImportError:
             return False
@@ -53,7 +58,7 @@ except ImportError:
     from django.template.context import get_standard_processors
     has_engine = False
 
-VERSION = (0, 8, 0)
+VERSION = (0, 9, 0)
 __version__ = '.'.join(map(str, VERSION))
 
 EXCLUDE_APPS = (
@@ -127,7 +132,7 @@ def get_env():
 
     opts = {
         'trim_blocks': True,
-        'extensions': ['jinja2.ext.i18n'],
+        'extensions': ['jinja2.ext.i18n', 'jingo.ext.JingoExtension'],
         'autoescape': True,
         'auto_reload': settings.DEBUG,
         'loader': jinja2.ChoiceLoader(loaders),
@@ -176,10 +181,8 @@ def load_helpers():
         return
     _helpers_loaded = True
 
-    from jingo import helpers  # noqa
-
     for config in apps.get_app_configs():
-        if not has_helpers(config.name):
+        if not has_helpers(config):
             continue
 
         import_module('%s.helpers' % config.name)
