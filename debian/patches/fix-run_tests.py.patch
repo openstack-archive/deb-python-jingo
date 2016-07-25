@@ -4,8 +4,10 @@ Bug-Debian: https://bugs.debian.org/806365
 Forwarded: no
 Last-Update: 2016-01-11
 
---- python-jingo-0.8.orig/run_tests.py
-+++ python-jingo-0.8/run_tests.py
+Index: python-jingo/run_tests.py
+===================================================================
+--- python-jingo.orig/run_tests.py
++++ python-jingo/run_tests.py
 @@ -10,9 +10,11 @@ os.environ['DJANGO_SETTINGS_MODULE'] = '
  os.environ['PYTHONPATH'] = os.pathsep.join([ROOT,
                                              os.path.join(ROOT, 'examples')])

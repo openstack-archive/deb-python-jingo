@@ -4,8 +4,10 @@ Bug-Debian: https://bugs.debian.org/806365
 Forwarded: no
 Last-Update: 2016-01-11
 
---- python-jingo-0.8.orig/jingo/tests/test_loader.py
-+++ python-jingo-0.8/jingo/tests/test_loader.py
+Index: python-jingo/jingo/tests/test_loader.py
+===================================================================
+--- python-jingo.orig/jingo/tests/test_loader.py
++++ python-jingo/jingo/tests/test_loader.py
 @@ -22,18 +22,3 @@ def test_render_no_toplevel_override():
  def test_render_toplevel_override():
      r = render(Mock(), 'jinja_app/test_override.html', {})

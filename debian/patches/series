@@ -1,7 +1,5 @@
-removed-problematic-functions-with-python3.patch
 fix-removed-TemplateDoesNotExist-from-django-1.9.patch
-fix-django.utils.importlib-removed-from-django-1.9.patch
-more-django-1.9-fixups.patch
 remove-broken-django-tests.patch
 fix-run_tests.py.patch
 use-six-not-from-django.patch
+fix-django.template.loader.BaseLoader-removed-from-django10.patch

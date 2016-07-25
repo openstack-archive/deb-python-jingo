@@ -1,0 +1,16 @@
+Description: Fix django.template.loader.BaseLoader removed from Django 1.10
+Author: Thomas Goirand <zigo@debian.org>
+Forwarded: no
+Last-Update: 2016-07-25
+
+--- python-jingo-0.9.orig/jingo/__init__.py
++++ python-jingo-0.9/jingo/__init__.py
+@@ -9,7 +9,7 @@ import re
+ from django.apps import apps
+ from django.conf import settings
+ from django.template.base import Origin
+-from django.template.loader import BaseLoader
++from django.template.loaders.base import Loader as BaseLoader
+ 
+ try:
+     from importlib import import_module

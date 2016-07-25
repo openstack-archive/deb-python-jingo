@@ -3,8 +3,10 @@ Author: Thomas Goirand <zigo@debian.org>
 Forwarded: no
 Last-Update: 2015-12-28
 
---- python-jingo-0.8.orig/jingo/__init__.py
-+++ python-jingo-0.8/jingo/__init__.py
+Index: python-jingo/jingo/__init__.py
+===================================================================
+--- python-jingo.orig/jingo/__init__.py
++++ python-jingo/jingo/__init__.py
 @@ -8,7 +8,7 @@ import re
  
  from django.apps import apps
@@ -12,9 +14,9 @@ Last-Update: 2015-12-28
 -from django.template.base import Origin, TemplateDoesNotExist
 +from django.template.base import Origin
  from django.template.loader import BaseLoader
- from django.utils.importlib import import_module
  
-@@ -67,6 +67,8 @@ log = logging.getLogger('jingo')
+ try:
+@@ -72,6 +72,8 @@ log = logging.getLogger('jingo')
  
  _helpers_loaded = False
  
