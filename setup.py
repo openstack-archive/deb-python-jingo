@@ -13,7 +13,7 @@ setup(
     packages=['jingo'],
     include_package_data=True,
     zip_safe=False,
-    install_requires=['jinja2','six'],
+    install_requires=['jinja2'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
