@@ -9,6 +9,7 @@ python-jingo (0.9-1) unstable; urgency=medium
   [ Thomas Goirand ]
   * New upstream release.
   * Rebased patches.
+  * Rename patches so it's less messy.
   * Add patch:
     - add-django.contrib.sites-to-INSTALLED_APPS.patch
     - django-1.10-defines_TEMPLATES.patch

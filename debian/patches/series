@@ -1,9 +1,9 @@
-fix-removed-TemplateDoesNotExist-from-django-1.9.patch
+django-1.9-TemplateDoesNotExist-has-moved.patch
 remove-broken-django-tests.patch
-fix-run_tests.py.patch
-use-six-not-from-django.patch
-fix-django.template.loader.BaseLoader-removed-from-django10.patch
-add-django.contrib.sites-to-INSTALLED_APPS.patch
+django-1.9-fix-run_tests.py-must-call-django.setup.patch
+django-1.9-use-six-not-from-django.patch
+django-1.10-fix-django.template.loader.BaseLoader-removed.patch
+django-1.10-add-django.contrib.sites-to-INSTALLED_APPS.patch
 django-1.10-defines_TEMPLATES.patch
 django-1.10-read-debug-boolean-from-template-backend.patch
 django-1.10-django.forms.util-renamed.patch
