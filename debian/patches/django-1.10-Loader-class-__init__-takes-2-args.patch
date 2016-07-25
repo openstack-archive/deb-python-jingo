@@ -1,0 +1,16 @@
+Description: Loader class __init__ takes 2 args
+Author: Thomas Goirand <zigo@debian.org>
+Forwarded: no
+Last-Update: 2016-07-25
+
+--- python-jingo-0.9.orig/jingo/__init__.py
++++ python-jingo-0.9/jingo/__init__.py
+@@ -239,7 +239,7 @@ register = Register()
+ class Loader(BaseLoader):
+     is_usable = True
+ 
+-    def __init__(self):
++    def __init__(self, args):
+         if has_engine:
+             super(Loader, self).__init__(Engine.get_default())
+         else:
