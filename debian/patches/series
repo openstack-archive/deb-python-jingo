@@ -8,3 +8,4 @@ django-1.10-defines_TEMPLATES.patch
 django-1.10-read-debug-boolean-from-template-backend.patch
 django-1.10-django.forms.util-renamed.patch
 django-1.10-Loader-class-__init__-takes-2-args.patch
+django-1.10-urls.patterns-removed.patch

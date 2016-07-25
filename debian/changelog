@@ -16,6 +16,7 @@ python-jingo (0.9-1) unstable; urgency=medium
     - django-1.10-read-debug-boolean-from-template-backend.patch
     - django-1.10-django.forms.util-renamed.patch
     - django-1.10-Loader-class-__init__-takes-2-args.patch
+    - django-1.10-urls.patterns-removed.patch
 
  -- Thomas Goirand <zigo@debian.org>  Tue, 19 Jul 2016 09:31:10 +0000
 
