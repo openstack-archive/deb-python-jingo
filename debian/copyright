@@ -2,13 +2,13 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: jingo
 Source: https://github.com/jbalogh/jingo
 
-Files: debian/*
-Copyright: (c) 2014, Thomas Goirand <zigo@debian.org>
-License: BSD-3-clause
-
 Files: *
 Copyright: (c) 2010-2014, The Mozilla Foundation
            (c) 2014, Jeff Balogh <jbalogh@mozilla.com>
+License: BSD-3-clause
+
+Files: debian/*
+Copyright: (c) 2014-2016, Thomas Goirand <zigo@debian.org>
 License: BSD-3-clause
 
 License: BSD-3-clause
