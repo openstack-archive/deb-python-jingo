@@ -10,7 +10,7 @@ python-jingo (0.9-1) unstable; urgency=medium
   * New upstream release.
   * Rebased patches.
   * Rename patches so it's less messy.
-  * Add patch:
+  * Add patch (Closes: #828675):
     - add-django.contrib.sites-to-INSTALLED_APPS.patch
     - django-1.10-defines_TEMPLATES.patch
     - django-1.10-read-debug-boolean-from-template-backend.patch
