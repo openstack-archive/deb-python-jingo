@@ -5,12 +5,13 @@ Last-Update: 2016-07-25
 
 --- python-jingo-0.9.orig/fake_settings.py
 +++ python-jingo-0.9/fake_settings.py
-@@ -7,6 +7,8 @@ INSTALLED_APPS = (
+@@ -7,6 +7,9 @@ INSTALLED_APPS = (
      'django.contrib.admin.apps.SimpleAdminConfig',
      'jingo.tests.jinja_app',
      'jingo.tests.django_app',
 +    'django.contrib.sites',
 +    'django.contrib.contenttypes',
++    'django.contrib.auth',
  )
  TEMPLATE_LOADERS = (
      'jingo.Loader',
