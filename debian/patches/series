@@ -6,3 +6,4 @@ fix-django.template.loader.BaseLoader-removed-from-django10.patch
 add-django.contrib.sites-to-INSTALLED_APPS.patch
 django-1.10-defines_TEMPLATES.patch
 django-1.10-read-debug-boolean-from-template-backend.patch
+django-1.10-django.forms.util-renamed.patch
