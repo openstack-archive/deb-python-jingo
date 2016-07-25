@@ -5,7 +5,7 @@ Last-Update: 2016-07-25
 
 --- python-jingo-0.9.orig/fake_settings.py
 +++ python-jingo-0.9/fake_settings.py
-@@ -20,3 +20,17 @@ JINGO_EXCLUDE_APPS = ('django_app',)
+@@ -20,3 +20,24 @@ JINGO_EXCLUDE_APPS = ('django_app',)
  ROOT_URLCONF = 'jingo.tests.urls'
  
  SECRET_KEY = 'jingo'
@@ -15,6 +15,13 @@ Last-Update: 2016-07-25
 +        'BACKEND': 'django.template.backends.django.DjangoTemplates',
 +        'DIRS': [path('jingo/tests/templates'),],
 +        'OPTIONS': {
++            'debug': True,
++            'context_processors': [
++                'django.template.context_processors.debug',
++                'django.template.context_processors.request',
++                'django.contrib.auth.context_processors.auth',
++                'django.contrib.messages.context_processors.messages',
++            ],
 +            'loaders': [
 +                'jingo.Loader',
 +                'django.template.loaders.filesystem.Loader',
